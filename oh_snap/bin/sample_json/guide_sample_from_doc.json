@@ -1,0 +1,31 @@
+{
+  "guide": {
+    "uuid": "0bed6fee853b4f4e966cec0f1210079d",
+    "last_edited": 1343395079,
+    "master_uuid": "afd67cf1fa3d4d07a06b5d948daa4c77",
+    "seq": 9,
+    "branch_uuid": "afd67cf1fa3d4d07a06b5d948daa4c77",
+    "branch_point_master_seq": null,
+    "branch_point_seq": null,
+    "branch_point_txn_id": null
+    "publish_date": 1343395079,
+    "publish_title": "Make Sous Vide Chicken at Home",
+    "publish_url": "/guides/make-sous-vide-chicken-at-home/",
+    "publish_main_image_uuid": "77907e4f073b43c9971d12d6141332a8",
+    "short": "vcyq",
+    "like_count": 1492,
+    "is_liked": true,
+    "view_count": 21172,
+    "guide_comment_count": 89,
+    "supplies_comment_count": 1,
+    "total_comment_count": 131,
+    "supplies_uuid": "30e7aa4efe664f52bbf23c0cea430720",
+    "metadata":  { ... },
+    "author":  { ... },
+    "media":  { ... },
+    "items": [ ... ],
+    "supplies": { ... },
+    "topics": [ ... ],
+  },
+  "success":true
+}

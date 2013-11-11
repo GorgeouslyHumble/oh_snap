@@ -1,0 +1,5 @@
+Flask==0.10.1
+redisco==0.2.4
+requests==2.0.1
+rq==0.3.11
+simplejson==3.3.1
