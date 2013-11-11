@@ -7,11 +7,11 @@ It will, initially, be a simple web application that displays a leaderboard of w
 
 Stack:
 =======
-Flask as the web framework.
-RQ (Redis Queue) will handle queueing.
-Requests and Simplejson for talking to the API.
-Redis and Redisco handles the storing and retrieving of API responses.
-Will use Pyyco when the application reaches v1.0.0 and I've proof-read my documentation.
+1. Flask as the web framework.
+2. RQ (Redis Queue) will handle queueing.
+3. Requests and Simplejson for talking to the API.
+4. Redis and Redisco handles the storing and retrieving of API responses.
+5. Will use Pyyco when the application reaches v1.0.0 and I've proof-read my documentation.
 
 Done:
 ======
