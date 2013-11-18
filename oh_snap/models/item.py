@@ -11,6 +11,7 @@
 # }
 
 from redisco import models
+from oh_snap.models.content import Content
 
 class Item(models.Model):
 
