@@ -23,18 +23,26 @@ silent_treatment = Doghouse(location='the cold side of the bed')
 silent_treatment.is_valid()
 silent_treatment.save()
 
-snide_comments = Doghouse(location='everywhere')
+snide_comments = Doghouse(location='kitchen table')
 snide_comments.is_valid()
 snide_comments.save()
+
+cold_shoulder = Doghouse(location='everywhere')
+cold_shoulder.is_valid()
+cold_shoulder.save()
 
 dog = Dog(name="Daryl", 
 		  breed="Construction worker", 
 		  description="He told his wife that he liked her sister's cooking better.",
 		  current_doghouse=(couch),
-		  previous_doghouses=([snide_comments, silent_treatment]))
+		  previous_doghouses=[silent_treatment])
 
 dog.is_valid()
 dog.save()
 
 daryl = Dog.objects.filter(name="Daryl")[0]
 print daryl.previous_doghouses
+
+daryl.previous_doghouses.append([snide_comments, cold_shoulder])
+print daryl.previous_doghouses
+
