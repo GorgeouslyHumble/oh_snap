@@ -1,5 +1,6 @@
 from oh_snap import app
-from modules.api import API
+from oh_snap.modules.api import API
+from oh_snap.modules.storage import Storage
 from flask import Flask, request, render_template
 
 #API - Just the groundwork. I won't have these routes do anything yet
@@ -15,6 +16,14 @@ def return_guides_json():
 @app.route('/api/v1/top_guides')
 def return_top_guides_json():
 	return 'hello'
+
+@app.route('/api/v1/store_guides')
+def store_guides():
+  store = Storage()
+
+  store.store_guides_from_top()
+
+  return 'success'
 
 #UI routes
 
