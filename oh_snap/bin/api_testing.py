@@ -11,13 +11,13 @@ request = requests.get("http://snapguide.com/api/v1/guides/latest?limit=100")
 
 my_json = request.text
 
-value = json.loads(my_json)
+guides = json.loads(my_json)
 # value = json.dumps(my_json)
 
 # pprint(value['guide']['media'].keys()[0])
 
-for item in value['guides']:
-	pprint(item)
+# for item in value['guides']:
+# 	pprint(item)
 
 # api_response_structure = json.loads(my_json)
 
@@ -60,37 +60,37 @@ for item in value['guides']:
 
 #print value
 
-# class Guide(models.Model):
-# 	author = models.Attribute(indexed=True)
-# 	author_external_id = models.Attribute(indexed=True)
-# 	author_image = models.Attribute(indexed=True)
-# 	author_location_text = models.Attribute(indexed=True)
-# 	author_profile = models.Attribute(indexed=True)
-# 	author_tombstoned = models.Attribute(indexed=True)
-# 	created = models.IntegerField(indexed=True)
-# 	guide_comment_count = models.IntegerField(indexed=True)
-# 	guide_id = models.IntegerField(indexed=True)
-# 	image = models.Attribute(indexed=True)
-# 	is_hidden = models.BooleanField(indexed=True)
-# 	is_liked = models.BooleanField(indexed=True)
-# 	is_public = models.BooleanField(indexed=True)
-# 	like_count = models.IntegerField(indexed=True)
-# 	path = models.Attribute(indexed=True)
-# 	primary_topic = models.Attribute(indexed=True)
-# 	primary_topic_display_name = models.Attribute(indexed=True)
-# 	public_snapshot_id = models.IntegerField(indexed=True)
-# 	short = models.Attribute(indexed=True)
-# 	skip_popular_feed = models.BooleanField(indexed=True)
-# 	slug = models.Attribute(indexed=True)
-# 	step_count = models.IntegerField(indexed=True)
-# 	summary = models.Attribute(indexed=True)
-# 	supplies_comment_count = models.IntegerField(indexed=True)
-# 	title = models.Attribute(indexed=True)
-# 	tombstoned = models.Attribute(indexed=True)
-# 	topics = models.ListField(unicode, indexed=True)
-# 	total_comment_count = models.IntegerField(indexed=True)
-# 	uuid = models.Attribute(unique=True, required=True)
-# 	view_count = models.IntegerField(indexed=True)
+class Guide(models.Model):
+	author = models.Attribute(indexed=True)
+	author_external_id = models.Attribute(indexed=True)
+	author_image = models.Attribute(indexed=True)
+	author_location_text = models.Attribute(indexed=True)
+	author_profile = models.Attribute(indexed=True)
+	author_tombstoned = models.Attribute(indexed=True)
+	created = models.IntegerField(indexed=True)
+	guide_comment_count = models.IntegerField(indexed=True)
+	guide_id = models.IntegerField(indexed=True)
+	image = models.Attribute(indexed=True)
+	is_hidden = models.BooleanField(indexed=True)
+	is_liked = models.BooleanField(indexed=True)
+	is_public = models.BooleanField(indexed=True)
+	like_count = models.IntegerField(indexed=True)
+	path = models.Attribute(indexed=True)
+	primary_topic = models.Attribute(indexed=True)
+	primary_topic_display_name = models.Attribute(indexed=True)
+	public_snapshot_id = models.IntegerField(indexed=True)
+	short = models.Attribute(indexed=True)
+	skip_popular_feed = models.BooleanField(indexed=True)
+	slug = models.Attribute(indexed=True)
+	step_count = models.IntegerField(indexed=True)
+	summary = models.Attribute(indexed=True)
+	supplies_comment_count = models.IntegerField(indexed=True)
+	title = models.Attribute(indexed=True)
+	tombstoned = models.Attribute(indexed=True)
+	topics = models.ListField(unicode, indexed=True)
+	total_comment_count = models.IntegerField(indexed=True)
+	uuid = models.Attribute(unique=True, required=True)
+	view_count = models.IntegerField(indexed=True)
 
 # guides = api_response_structure['guides']
 
@@ -99,44 +99,45 @@ for item in value['guides']:
 # 	value += 1
 # print value
 
-# for guide in guides:
-# 	guide_key = Guide.objects.get_or_create(
-# 					author=guide['author'],
-# 					author_external_id=guide['author_external_id'],
-# 					author_image=guide['author_image'],
-# 					author_location_text=guide['author_location_text'],
-# 					author_profile=guide['author_profile'],
-# 					author_tombstoned=guide['author_tombstoned'],
-# 					created=guide['created'],
-# 					guide_comment_count=guide['guide_comment_count'],
-# 					guide_id=guide['guide_id'],
-# 					image=guide['image'],
-# 					is_hidden=guide['is_hidden'],
-# 					is_liked=guide['is_liked'],
-# 					is_public=guide['is_public'],
-# 					like_count=guide['like_count'],
-# 					path=guide['path'],
-# 					primary_topic=guide['primary_topic'],
-# 					primary_topic_display_name=guide['primary_topic_display_name'],
-# 					public_snapshot_id=guide['public_snapshot_id'],
-# 					short=guide['short'],
-# 					skip_popular_feed=guide['skip_popular_feed'],
-# 					slug=guide['slug'],
-# 					step_count=guide['step_count'],
-# 					summary=guide['summary'],
-# 					supplies_comment_count=guide['supplies_comment_count'],
-# 					title=guide['title'],
-# 					tombstoned=guide['tombstoned'],
-# 					topics=guide['topics'],
-# 					total_comment_count=guide['total_comment_count'],
-# 					uuid=guide['uuid'],
-# 					view_count=guide['view_count'])
-# 	guide_key.save()
+for guide in guides['guides']:
+	print guide
+	guide_key = Guide.objects.get_or_create(
+					author=guide['author'],
+					author_external_id=guide['author_external_id'],
+					author_image=guide['author_image'],
+					author_location_text=guide['author_location_text'],
+					author_profile=guide['author_profile'],
+					author_tombstoned=guide['author_tombstoned'],
+					created=guide['created'],
+					guide_comment_count=guide['guide_comment_count'],
+					guide_id=guide['guide_id'],
+					image=guide['image'],
+					is_hidden=guide['is_hidden'],
+					is_liked=guide['is_liked'],
+					is_public=guide['is_public'],
+					like_count=guide['like_count'],
+					path=guide['path'],
+					primary_topic=guide['primary_topic'],
+					primary_topic_display_name=guide['primary_topic_display_name'],
+					public_snapshot_id=guide['public_snapshot_id'],
+					short=guide['short'],
+					skip_popular_feed=guide['skip_popular_feed'],
+					slug=guide['slug'],
+					step_count=guide['step_count'],
+					summary=guide['summary'],
+					supplies_comment_count=guide['supplies_comment_count'],
+					title=guide['title'],
+					tombstoned=guide['tombstoned'],
+					topics=guide['topics'],
+					total_comment_count=guide['total_comment_count'],
+					uuid=guide['uuid'],
+					view_count=guide['view_count'])
+	guide_key.save()
 
-# guide_list = Guide.objects.all()
+guide_list = Guide.objects.all()
 
-# pprint(guide_list)
+pprint(guide_list)
 
-# for item in guide_list:
-# 	print item.uuid
+for item in guide_list:
+	print item.view_count
 
